@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Room } from '../../models/room/room.model';
-// import { RoomListService } from '../../services/room-list/room-list.service';
+import { RoomListService } from '../../services/room-list/room-list.service';
 
 /**
  * Generated class for the AddRoomsPage page.
@@ -25,10 +25,7 @@ export class AddRoomsPage {
     busy : false,   
   }
 
-  // constructor(public navCtrl: NavController, public navParams: NavParams, private roomService : RoomListService) {
-  // }
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private roomService : RoomListService) {
   }
 
   ionViewDidLoad() {
@@ -36,9 +33,9 @@ export class AddRoomsPage {
   }
 
   addRoom(room : Room){
-    // this.roomService.addRoom(room).then(ref => {
-    //   console.log(ref.key);
-    // });
+    this.roomService.addRoom(room).then(ref => {
+      this.navCtrl.setRoot("HomePage", {key : ref.key})
+    });
   }
 
 }

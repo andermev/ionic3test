@@ -1,19 +1,19 @@
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase } from "angularfire2/database";
-import { Room } from "../../models/room/room.model";
+import { Room } from "./../../models/room/room.model";
 
-// @Injectable()
-// export class RoomListService {
+@Injectable()
+export class RoomListService {
 
-//     private roomListRef = this.db.list<Room>('room-list');
+    private roomListRef = this.db.list<Room>('room-list');
 
-//     constructor(private db: AngularFireDatabase){ }
+    constructor(private db: AngularFireDatabase){ }
 
-//     getRoomList() {
-//         return this.roomListRef;
-//     }
+    getRoomList() {
+        return this.roomListRef;
+    }
 
-//     addRoom(room : Room){
-//         return this.roomListRef.push(room);
-//     }
-// }
+    addRoom(room : Room){
+        return this.roomListRef.push(room);
+    }
+}

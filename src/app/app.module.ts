@@ -4,11 +4,11 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 
 import { MyApp } from './app.component';
 import {FIREBASE_CONFIG} from './firebase.credentials';
-// import {RoomListService} from './../services/room-list/room-list.service';
+import {RoomListService} from './../services/room-list/room-list.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,9 @@ import {FIREBASE_CONFIG} from './firebase.credentials';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RoomListService,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}
