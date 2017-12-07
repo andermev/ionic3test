@@ -9,6 +9,7 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 import { MyApp } from './app.component';
 import {FIREBASE_CONFIG} from './firebase.credentials';
 import {RoomListService} from './../services/room-list/room-list.service';
+import { ToastService } from '../services/toast/toast.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {RoomListService} from './../services/room-list/room-list.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RoomListService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    ToastService
   ]
 })
 export class AppModule {}

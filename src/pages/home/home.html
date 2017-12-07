@@ -14,10 +14,11 @@
 <ion-content>
   <ion-list>
     <ion-list-header>
-      Items
+      Rooms
     </ion-list-header>
-    <ion-item *ngFor="let item of roomList$ | async">
-      {{item.name}}
+    <ion-item *ngFor="let room of roomList$ | async" detail-push
+    navPush="EditRoomsPage" [navParams] = "{room:room}">
+      {{room.name}}
     </ion-item>
   </ion-list>
 </ion-content>

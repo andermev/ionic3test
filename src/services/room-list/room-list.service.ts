@@ -16,4 +16,12 @@ export class RoomListService {
     addRoom(room : Room){
         return this.roomListRef.push(room);
     }
+
+    editRoom(room : Room){
+        return this.roomListRef.update(room.key, room);
+    }
+
+    removeRoom(room: Room){
+        return this.roomListRef.remove(room.key);
+    }
 }
