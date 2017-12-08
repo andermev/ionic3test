@@ -1,0 +1,7 @@
+# ionic3test
+
+Download project
+Enter to folder of project
+Run command ionic lab to start device emulator
+Run command ionic cordova build android
+Create apk in route in your system
